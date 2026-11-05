@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deni Androvic | IT Help Desk Consultant</title>
+<meta name="description" content="Portfolio of Deni Androvic, IT Help Desk Consultant and Information Technology student at William Paterson University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0d1117;
+    --surface: #161c25;
+    --ink: #e8edf3;
+    --muted: #9aa7b5;
+    --line: #28313d;
+    --accent: #6d97f5;
+    --accent-dark: #1e3a8a;
+    --accent-soft: rgba(109, 151, 245, .16);
+    --accent2: #e5484d;
+    --head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font: 400 1.05rem/1.65 var(--body); }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+  nav { border-bottom: 1px solid var(--line); background: rgba(13, 17, 23, .92); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 5; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: .9rem; padding-bottom: .9rem; gap: 1rem; flex-wrap: wrap; }
+  nav strong { font: 700 1.1rem var(--head); }
+  nav ul { list-style: none; padding: 0; display: flex; gap: 1.4rem; }
+  nav a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+
+  header { padding: 5rem 0 4rem; }
+  header h1 { font: 800 clamp(2.8rem, 9vw, 5.5rem)/1 var(--head); letter-spacing: -.03em; }
+  header .role { font: 500 clamp(1.2rem, 3vw, 1.6rem) var(--head); color: var(--accent); margin-top: 1rem; }
+  header .where { color: var(--muted); margin-top: .5rem; }
+  .links { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn { display: inline-block; padding: .7rem 1.3rem; border-radius: 6px; font-weight: 600; text-decoration: none; border: 2px solid var(--accent); }
+  .btn.primary { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+  .btn:hover { box-shadow: 0 0 0 4px var(--accent-soft); }
+  .btn.ghost { color: var(--accent); }
+
+  section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+  h2 { font: 700 1.9rem var(--head); margin-bottom: 1.5rem; letter-spacing: -.01em; padding-left: .8rem; border-left: 4px solid var(--accent2); }
+  h3 { font: 700 1.2rem var(--head); }
+
+  .about { max-width: 68ch; }
+  .about p + p { margin-top: 1rem; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .skill-group h3 { margin-bottom: .7rem; font-size: 1.05rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; list-style: none; }
+  .chips li { background: rgba(30, 58, 138, .45); color: #b5c9ff; border: 1px solid var(--accent-dark); padding: .2rem .7rem; border-radius: 999px; font-size: .88rem; font-weight: 500; }
+
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent2); border-radius: 10px; padding: 1.6rem; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 18px 32px rgba(0, 0, 0, .55), 0 0 0 1px var(--accent); }
+  .card .date { color: var(--muted); font-size: .88rem; margin: .2rem 0 .9rem; }
+  .card ul { padding-left: 1.1rem; }
+  .card li + li { margin-top: .5rem; }
+  .card .chips { margin-top: 1.2rem; }
+
+  .timeline { display: grid; gap: 1.8rem; }
+  .job .meta { color: var(--muted); font-size: .92rem; }
+  .job ul { padding-left: 1.1rem; margin-top: .5rem; }
+  .job li + li { margin-top: .35rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: .92rem; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <strong>Deni Androvic</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Deni Androvic</h1>
+    <p class="role">IT Help Desk Consultant</p>
+    <p class="where">Totowa, New Jersey. B.S. in Information Technology, William Paterson University.</p>
+    <div class="links">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <div class="about">
+        <p>I'm an IT help desk consultant who enjoys turning confusing technical problems into clear steps anyone can follow. At RUBGA LLC, I support office staff and construction crews by phone and remotely, and I set up the devices and job-site internet connections they rely on.</p>
+        <p>I'm earning my Bachelor of Science in Information Technology at William Paterson University and made the Dean's List in Spring 2026. Outside of work, I volunteer with TEKnowledge, build my own PCs, and work on web projects that help people new to IT learn from each other.</p>
+        <p>I speak English, Serbian, and Croatian fluently.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Service desk</h3>
+          <ul class="chips"><li>Zendesk</li><li>Jira</li><li>Incident management</li><li>SLA compliance</li><li>Phone support</li><li>Password resets</li><li>Account lockouts</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Networking</h3>
+          <ul class="chips"><li>LAN/WAN</li><li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>VPN</li><li>Wi-Fi troubleshooting</li><li>IPv4 subnetting</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Systems and security</h3>
+          <ul class="chips"><li>Active Directory</li><li>User provisioning</li><li>Permissions</li><li>Cybersecurity basics</li><li>Backup and recovery</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Hardware and operating systems</h3>
+          <ul class="chips"><li>Windows 10/11</li><li>macOS</li><li>Linux (basic)</li><li>PC building</li><li>RAM/SSD installs</li><li>Printer setup</li><li>iOS and Android setup</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <ul class="chips"><li>Python</li><li>HTML</li><li>CSS</li><li>PowerShell</li><li>G-code</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Coursework exposure</h3>
+          <ul class="chips"><li>Mainframe architecture</li><li>BMC Helix</li><li>Ascend platforms</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="card">
+          <h3>Tech Networking Platform</h3>
+          <p class="date">Nov 2025 to present. Full-stack web application.</p>
+          <ul>
+            <li>An interactive platform that connects beginner and experienced IT professionals.</li>
+            <li>Includes tech challenge games and collaborative problem-solving features to encourage continuous learning.</li>
+          </ul>
+          <ul class="chips"><li>Full-stack</li><li>Web app</li><li>Collaboration</li></ul>
+        </article>
+        <article class="card">
+          <h3>World of Artificial Intelligence</h3>
+          <p class="date">Dec 2025 to present. Research paper.</p>
+          <ul>
+            <li>Analyzes how AI affects workforce automation, education, and infrastructure data processing.</li>
+            <li>Examines ethical issues including data privacy, algorithmic bias, cybersecurity risks, and responsible development.</li>
+          </ul>
+          <ul class="chips"><li>Research</li><li>AI ethics</li><li>Cybersecurity</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="job">
+          <h3>IT Help Desk Consultant, RUBGA LLC</h3>
+          <p class="meta">New York, NY. Jan 2024 to present.</p>
+          <ul>
+            <li>Resolve hardware, software, and application issues for 10 office staff and 10+ construction workers by phone and remotely.</li>
+            <li>Log, track, and update issues in a ticketing system so incidents get resolved promptly.</li>
+            <li>Explain technical information clearly to non-technical users.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>IT Support Volunteer, TEKnowledge</h3>
+          <p class="meta">Worldwide nonprofit. May 2026 to present.</p>
+          <ul>
+            <li>Provide troubleshooting and basic IT help to people in need, with patient communication.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>Produce Clerk, ShopRite</h3>
+          <p class="meta">Nutley, NJ. Nov 2023 to Dec 2025.</p>
+          <ul>
+            <li>Helped customers in a high-volume store and managed inventory rotation independently.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>I'm open to help desk and IT support opportunities.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:deniandrovicb@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://linkedin.com/in/deni-androvic" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Deni Androvic</div>
+</footer>
+
+</body>
+</html>
